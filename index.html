@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/shoeCatalogue.css">
+    <script type="text/javascript" src="handlebars/handlebars-v4.0.5.js"></script>
+    <title>Shoe Catalogue</title>
+
+      <div id="myHeading">
+        <h1>Shoe Catalogue</h1>
+      </div>
+  </head>
+<body>
+  <div class="container">
+       <div class="mySlides" style="max-width:500px">
+        <img src="IMG-20160927-WA0005_large.jpg"  class="slideShow" style="width:80%">
+        <img src="IMG-20160927-WA0011_large.jpg"  class="slideShow" style="width:80%">
+        <img src="image_a43ea980-6512-49a6-893b-7b6c524402fa_large.png" class="slideShow" style="width:80%">
+        <img src="http://thumbs.ebaystatic.com/images/m/mnpgrJOv_rt_3twMU9-TnEA/s-l225.jpg" class="slideShow"
+          style="width:80%">
+          <img src="321717_50.jpg" class="slideShow" style="width:80%">
+         </div>
+         <script class="myTemplate" type="text/handlebars-x">
+          <br>
+          <tr>
+            <th>Product type</th>
+            <th>Brand</th>
+            <th>Color</th>
+            <th>Size</th>
+            <th>Price</th>
+            <th>in_stock</th>
+          </tr>
+          <tr>
+          {{#each shoeData}}
+          // <td>{{Product type}}</td>
+          <td>{{brand}}</td>
+          <td>{{color}}</td>
+          <td>{{price}}</td>
+          <td>{{in_stock}}</td>
+          {{/each}}
+        </tr>
+      </script>
+
+       <div id="drop">
+        <!-- <select id='prdctDrpDwn'>
+           <option>Product type</option>
+           <option name="Pumps">Pumps</option>
+           <option name="Buckles">Buckles</option>
+           <option name="Lace-UPS">Lace-UPS</option>
+           <option name="Lace-UPS">Lace-UPS</option>
+           <option name="Sneaker">Sneaker</option>
+     </select> -->
+       <select id="brandDrpDwn">
+           <option>Brand</option>
+           <option name="brand">Rubi</option>
+           <option name="brand">Aldo</option>
+           <option name="brand">Aldo</option>
+           <option name="brand">Lacoste</option>
+
+       </select>
+       <select id="colorDrpDwn">
+          <option>Color</option>
+          <option name="color">Blue</option>
+          <option name="color">Brown</option>
+          <option name="color">Pink</option>
+          <option name="color">Black</option>
+          <option name="color">White</option>
+
+
+       </select>
+       <select id="sizeDrpDwn">
+          <option>Size</option>
+          <option name='size' >5</option>
+          <option name="size">6</option>
+          <option name="size">7</option>
+          <option name="size">6</option>
+          <option name="size">8</option>
+       </select>
+
+       <button class="search" type="button" value="click">Search</button>
+       <!-- <label>Add stock</label>
+             Product type:<input>
+             <br>
+             Brand:<input>
+             <br>
+            Color:<input>
+            <br>
+            Size:<input>
+    </div> -->
+    <!-- <div class="Add">
+
+    </div> -->
+</div>
+
+
+<ul id='output'></ul>
+
+
+  </body>
+  <script type="text/javascript" src="shoeCatalogue.js"></script>
+
+
+</html>
