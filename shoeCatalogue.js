@@ -1,5 +1,4 @@
 
-
 var shoes = [
   {ProductType:'Pump',
   Brand:'Rubi',
@@ -45,36 +44,38 @@ var myTemplate= document.querySelector('#myTemplate').innerHTML;
 var myTemplateInstance = Handlebars.compile(myTemplate);
 var results = myTemplateInstance({data:shoes});
 document.querySelector('.shoeDisplay').innerHTML += results;
-var search = document.querySelector('.search');
+var search = document.querySelector('.search')
 
-dropDown.addEventListener('change',function(e){
-  
+search.addEventListener('click',filterData);
 
-  var shoes = document.querySelectorAll('shoeDisplay');
-  var selectedProduct=document.getElementById('productDrpDwn');
-  var selectedBrandName=document.getElementById('brandDrpDwn');
-  var selectedColor = document.getElementById('colorDrpDwn');
-  var selectedSize= document.getElementById('sizeDrpDwn');
-  var selectedPrice=document.getElementById('priceDrDwn');
+function filterData(){
+
+  var allShoes = document.querySelectorAll('.shoeDisplay');
+ var selectedProduct=document.querySelector('.productDrpDwn');
+  var selectedBrandName=document.querySelector('.brandDrpDwn');
+  var selectedColor = document.querySelector('.colorDrpDwn');
+  var selectedSize= document.querySelector('.sizeDrpDwn');
+  var selectedPrice=document.querySelector('.priceDrDwn');
 
   var filteredList = [];
 
   for (var i = 0; i < shoes.length; i++){
-    var array = shoes[i];
-
-  if (shoes.value==="all"){
-        filteredList.push(shoes);
+    //  console.log(shoes[i]);
+  if (selectedProduct.value == shoes[i].ProductType &&
+  selectedBrandName.value==shoes[i].Brand &&selectedColor.value==shoes[i].Color&& selectedSize==shoes[i].Size){
+        filteredList.push(shoes[i]);
   }
-
   }
+  document.getElementsByClassName('shoeFilter').innerHTML;
 
+  // console.log(filteredList(shoes[i]));
 // var data=""
 // for(var i in data){
 //   selectedColor.push(color);
 // }
 
 
-});
+}
 
 
 

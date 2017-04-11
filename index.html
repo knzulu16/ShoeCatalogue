@@ -52,39 +52,43 @@
     </div>
 
 
-  <div id="dropDown">
+  <div class="dropDown">
 
-  <select id="productDrpDwn">
+  <select class="productDrpDwn">
   <option class="productTemplate" value="">Select Product Type</option>
       {{#each data}}
     <option class="productTemplate"value="{{ProductType}}">{{ProductType}}</option>
         {{/each}}
     </select>
-    <select id="brandDrpDwn">
+    <br>
+    <select class="brandDrpDwn">
     <option class="brandTemplate" value="">Select Brand</option>
    {{#each data}}
     <option class="brandTemplate" value="{{Brand}}">{{Brand}}</option>
       {{/each}}
     </select>
-    <select id="colorDrpDwn">
+    <br>
+    <select class="colorDrpDwn">
       <option color="colorTemplate" value="">Select Color</option>
     {{#each data}}
     <option class="colorTemplate" value="{{Color}}">{{Color}}</option>
         {{/each}}
     </select>
-    <select id="sizeDrpDwn">
+    <br>
+    <select class="sizeDrpDwn">
       <option class="sizeTemplate" value="">Select Size</option>
     {{#each data}}
     <option class="sizeTemplate" value="{{Size}}">{{Size}}</option>
         {{/each}}
     </select>
-    <select id='priceDrDwn'>
+    <br>
+    <select class='priceDrDwn'>
       <option class="priceTemplate" value="">Select Price</option>
    {{#each data}}
     <option class="priceTemplate" value="{{Price}}">{{Price}}</option>
         {{/each}}
     </select>
-
+    <br>
    <button type="submit" value="submit" onChange="" class="search">Search</button>
   </div>
    </script>
