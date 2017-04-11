@@ -36,7 +36,15 @@ var shoes = [
     Size:'8',
     Price:'R1200.00',
     in_stock:'12'
+  },
+  {ProductType:'Sneaker',
+    Brand:'Rubi',
+    Color:'Grey',
+    Size:'8',
+    Price:'R1200.00',
+    in_stock:'12'
   }
+
 ];
 
 
@@ -44,7 +52,7 @@ var myTemplate= document.querySelector('#myTemplate').innerHTML;
 var myTemplateInstance = Handlebars.compile(myTemplate);
 var results = myTemplateInstance({data:shoes});
 document.querySelector('.shoeDisplay').innerHTML += results;
-var search = document.querySelector('.search')
+var search = document.querySelector('.search');
 
 search.addEventListener('click',filterData);
 
