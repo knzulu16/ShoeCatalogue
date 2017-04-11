@@ -43,37 +43,38 @@ var shoes = [
 
 var myTemplate= document.querySelector('#myTemplate').innerHTML;
 var myTemplateInstance = Handlebars.compile(myTemplate);
-
 var results = myTemplateInstance({data:shoes});
-console.log(results);
+document.querySelector('.shoeDisplay').innerHTML += results;
+var search = document.querySelector('.search');
 
+dropDown.addEventListener('change',function(e){
+  
 
-document.querySelector('.shoeDisplay').innerHTML+=results;
-
-
-function dropDown(){
+  var shoes = document.querySelectorAll('shoeDisplay');
+  var selectedProduct=document.getElementById('productDrpDwn');
   var selectedBrandName=document.getElementById('brandDrpDwn');
-    var selectedColor = document.getElementById('colorDrpDwn');
-    var selectedSize= document.getElementById('sizeDrpDwn');
-    console.log(selectedSize);
-    var selectedPrice=document.getElementById('PriceDrDwn');
+  var selectedColor = document.getElementById('colorDrpDwn');
+  var selectedSize= document.getElementById('sizeDrpDwn');
+  var selectedPrice=document.getElementById('priceDrDwn');
 
-var filteredList = [];
-for (var i=0;i<shoes.length;i++){
-  var shoes = shoes[i];
-  if(selectedBrandName.value === shoes[i].value &&selectedColor.value === shoes[i].Color &&
-      selectedSize.value === shoes[i].Size && selectedPrice.value===shoes[i].value)
-    {
+  var filteredList = [];
 
-    filteredList.push(shoes);
+  for (var i = 0; i < shoes.length; i++){
+    var array = shoes[i];
+
+  if (shoes.value==="all"){
+        filteredList.push(shoes);
   }
-}
 
-//Now use this with my template:
-var filteredDropDwnHTML = myTemplate({ shoes: filteredList});
-shoeFilter.innerHTML = filteredDropDwnHTML;
+  }
 
-}
+// var data=""
+// for(var i in data){
+//   selectedColor.push(color);
+// }
+
+
+});
 
 
 
