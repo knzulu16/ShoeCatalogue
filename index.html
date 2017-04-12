@@ -26,6 +26,7 @@
       </div>
       <div id="section">
   <script id="myTemplate" type="text/x-handlebars-template">
+
     <div id="myTable">
     <table>
        <thead>
@@ -91,12 +92,33 @@
     <br>
    <button type="submit" value="submit" onchange="filterData()" class="search">Search</button>
   </div>
+<div class="addStock">
+  <button type="button" name="" value="Add" onclick="AddText()">ADD</button>
+    <br>
+<input type="text"id="ProductType"  name="ProductType" placeholder="Enter ProductType"value="{{ProductType}}">
+<br>
+<input type="text" id="Brand" name="Brand" placeholder="Enter brand" value="{{Brand}}">
+<br>
+
+<input type="text"id="Color" name="Color" placeholder="Enter color" value="{{Color}}">
+<br>
+<input type="text" id="Size" name="Size" placeholder="Enter size" value="{{Size}}">
+<br>
+
+<input type="text" id="Price" name="Price" placeholder="Enter price" value="{{Price}}">
+<br>
+
+<input type="text" id="Stock" name="in_stock" placeholder="Enter stock" value="{{in_stock}}">
+</div>
+
+
    </script>
+
  </div>
      <div class="shoeDisplay"></div>
      <div class="shoeFilter"></div>
 
 </div>
 </body>
-  <script src="shoeCatalogue.js" charset="utf-8"></script>
+<script src="shoeCatalogue.js" charset="utf-8"></script>
 </html>

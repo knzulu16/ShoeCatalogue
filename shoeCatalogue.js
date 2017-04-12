@@ -1,4 +1,3 @@
-
 var shoes = [
   {ProductType:'Pump',
   Brand:'Rubi',
@@ -36,17 +35,8 @@ var shoes = [
     Size:'8',
     Price:'R1200.00',
     in_stock:'12'
-  },
-  {ProductType:'Sneaker',
-    Brand:'Rubi',
-    Color:'Grey',
-    Size:'8',
-    Price:'R1200.00',
-    in_stock:'12'
   }
-
 ];
-
 
 var myTemplate= document.querySelector('#myTemplate').innerHTML;
 var myTemplateInstance = Handlebars.compile(myTemplate);
@@ -58,22 +48,26 @@ search.addEventListener('click',filterData);
 
 function filterData(){
 
-  var allShoes = document.querySelectorAll('.shoeDisplay');
- var selectedProduct=document.querySelector('.productDrpDwn');
-  var selectedBrandName=document.querySelector('.brandDrpDwn');
-  var selectedColor = document.querySelector('.colorDrpDwn');
-  var selectedSize= document.querySelector('.sizeDrpDwn');
-  var selectedPrice=document.querySelector('.priceDrDwn');
+var allShoes = document.querySelectorAll('.shoeDisplay');
+var selectedProduct=document.querySelector('.productDrpDwn');
+var selectedBrandName=document.querySelector('.brandDrpDwn');
+var selectedColor = document.querySelector('.colorDrpDwn');
+var selectedSize= document.querySelector('.sizeDrpDwn');
+var selectedPrice=document.querySelector('.priceDrDwn');
 
-  var filteredList = [];
-
+var filteredList = [];
+conosole.log(filteredList);
   for (var i = 0; i < shoes.length; i++){
     //  console.log(shoes[i]);
-  if (selectedProduct.value == shoes[i].ProductType &&
-  selectedBrandName.value==shoes[i].Brand &&selectedColor.value==shoes[i].Color&& selectedSize==shoes[i].Size){
-        filteredList.push(shoes[i]);
+    if(selectedProduct.value == shoes[i].ProductType &&
+        selectedBrandName.value ==shoes[i].Brand &&
+        selectedColor.value ==shoes[i].Color &&
+        selectedSize.value == shoes[i].Size){
+        filteredList.push(shoes);
+
+      }
   }
-  }
+
   document.getElementsByClassName('shoeFilter').innerHTML;
 
   // console.log(filteredList(shoes[i]));
@@ -87,6 +81,22 @@ function filterData(){
 
 
 
+
+
+function AddText(){
+  console.log('hgvbytf', document.querySelector('#ProductType').value);
+  shoes.push({
+    ProductType:document.querySelector('#ProductType').value,
+    Brand:document.querySelector('#Brand').value,
+    Color:document.querySelector('#Color').value,
+    Size:document.querySelector('#Size').value,
+    Price:document.querySelector('#Price').value,
+    in_stock:document.querySelector('#Stock').value
+  });
+
+  var results = myTemplateInstance({data:shoes});
+  document.querySelector('.shoeDisplay').innerHTML = results;
+  }
 
 
 
