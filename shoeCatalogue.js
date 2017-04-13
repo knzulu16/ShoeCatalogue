@@ -1,3 +1,9 @@
+  var brands = document.getElementsByName('Brand');
+  var colors = document.getElementsByName('Color');
+  var sizes = document.getElementsByName('Size');
+  var ProductType=document.getElementsByName('ProductType');
+  var Price=document.getElementsByName('Price');
+
 var shoes = [
   {ProductType:'Pump',
   Brand:'Rubi',
@@ -23,14 +29,14 @@ var shoes = [
     in_stock:'8'
   },
   { ProductType:'Lace-UPS',
-    Brand:'Lacoste',
+    Brand:'Aldo',
     Color:'Black',
     Size:'6',
     Price:'R1500.00',
     in_stock:'10'
   },
   {ProductType:'Sneaker',
-    Brand:'Rubi',
+    Brand:'Lacoste',
     Color:'White',
     Size:'8',
     Price:'R1200.00',
@@ -57,29 +63,21 @@ var selectedPrice=document.querySelector('.priceDrDwn');
 
 var filteredList = [];
 
+
   for (var i = 0; i < shoes.length; i++){
     var array=shoes[i];
-    if(selectedProduct.value == array[i].ProductType &&
-      selectedBrandName.value ==array[i].Brand &&
-      selectedColor.value ==array[i].Color &&
-      selectedSize.value == array[i].Size){
+    if(selectedProduct.value == array.ProductType&&
+      selectedBrandName.value ==array.Brand&&
+      selectedColor.value ==array.Color &&
+      selectedSize.value == array.Size){
         filteredList.push(array);
 
       }
 
     }
-    AddText(filteredList);
-  }
-// var results = myTemplateInstance({data:filteredList});
-// //  var shoeFilter = document.getElementsByClassName('shoeFilter');
-//   document.querySelector('.shoeDisplay').innerHTML += results;
-  // console.log(filteredList(shoes[i]));
-// var data=""
-// for(var i in data){
-//   selectedColor.push(color);
-// }
-
-
+    var results = myTemplateInstance({data:filteredList});
+    document.querySelector('.shoeDisplay').innerHTML = results;
+}
 
 
 
@@ -158,9 +156,6 @@ function AddText(){
 //   var selectedColor = document.getElementById('colorDrpDwn');
 //   var selectedSize= document.getElementById('sizeDrpDwn');
 //   var selectedPrice=document.getElementById('PriceDrDwn');
-//   // var brands = document.getElementsByName('brand');
-//   // var colors = document.getElementsByName('color');
-//   // var sizes = document.getElementsByName('size');
 //
 // var list=document.querySelector("data");
 // var unOrdered =document.getElementById('output');
