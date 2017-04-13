@@ -56,20 +56,23 @@ var selectedSize= document.querySelector('.sizeDrpDwn');
 var selectedPrice=document.querySelector('.priceDrDwn');
 
 var filteredList = [];
-conosole.log(filteredList);
+
   for (var i = 0; i < shoes.length; i++){
-    //  console.log(shoes[i]);
-    if(selectedProduct.value == shoes[i].ProductType &&
-        selectedBrandName.value ==shoes[i].Brand &&
-        selectedColor.value ==shoes[i].Color &&
-        selectedSize.value == shoes[i].Size){
-        filteredList.push(shoes);
+    var array=shoes[i];
+    if(selectedProduct.value == array[i].ProductType &&
+      selectedBrandName.value ==array[i].Brand &&
+      selectedColor.value ==array[i].Color &&
+      selectedSize.value == array[i].Size){
+        filteredList.push(array);
 
       }
+
+    }
+    AddText(filteredList);
   }
-
-  document.getElementsByClassName('shoeFilter').innerHTML;
-
+// var results = myTemplateInstance({data:filteredList});
+// //  var shoeFilter = document.getElementsByClassName('shoeFilter');
+//   document.querySelector('.shoeDisplay').innerHTML += results;
   // console.log(filteredList(shoes[i]));
 // var data=""
 // for(var i in data){
@@ -77,14 +80,14 @@ conosole.log(filteredList);
 // }
 
 
-}
+
 
 
 
 
 
 function AddText(){
-  console.log('hgvbytf', document.querySelector('#ProductType').value);
+
   shoes.push({
     ProductType:document.querySelector('#ProductType').value,
     Brand:document.querySelector('#Brand').value,
