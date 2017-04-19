@@ -5,6 +5,7 @@
   var Price=document.getElementsByName('Price');
   var addButton=document.querySelector('.addButton');
 var submitButton=document.querySelector('.search');
+var shoeDisplay=document.querySelector('.shoeDisplay');
 var shoes = [
   {ProductType:'Pump',
   Brand:'Rubi',
@@ -55,8 +56,6 @@ var search = document.querySelector('.search');
 
 
 function AddText(){
-  
-
   shoes.push({
     ProductType:document.querySelector('#ProductType').value,
     Brand:document.querySelector('#Brand').value,
@@ -70,9 +69,123 @@ function AddText(){
   document.querySelector('.shoeDisplay').innerHTML = results;
 }
 
+function uniqColorList(dataList){
+  var color=[];
+  var colorMap={};
+  for(var i=0;i<dataList.length;i++){
+    var colorData=dataList[i];
+    if(colorMap[colorData.Color]===undefined){
+      colorMap[colorData.Color]=colorData.Color;
+      color.push(colorData.Color);
+    }
+
+  }
+  return color;
+}
+function uniqProductTList(dataList){
+  var ProductType=[];
+  var ProductTypeMap={};
+  for(var i=0;i<dataList.length;i++){
+    var ProductTypeData=dataList[i];
+    if(ProductTypeMap[ProductTypeData.ProductType]===undefined){
+      ProductTypeMap[ProductTypeData.ProductType]=colorData.ProductType;
+      color.push(ProductTypeData.ProductType);
+    }
+
+  }
+  return ProductType;
+}
+function uniqbrandList(dataList){
+  var brand=[];
+  var brandMap={};
+  for(var i=0;i<dataList.length;i++){
+    var brandData=dataList[i];
+    if(brandMap[brandData.brand]===undefined){
+      brandMap[brandData.brand]=brandData.brand;
+      color.push(brandData.brand);
+    }
+
+  }
+  return brand;
+}
+
+function uniqsizeList(dataList){
+  var size=[];
+  var sizeMap={};
+  for(var i=0;i<dataList.length;i++){
+    var sizeData=dataList[i];
+    if(sizeMap[sizeData.size]===undefined){
+      sizeMap[sizeData.size]=sizeData.size;
+      size.push(sizeData.size);
+    }
+
+  }
+  return size;
+}
+function uniqpriceList(dataList){
+  var price=[];
+  var priceMap={};
+  for(var i=0;i<dataList.length;i++){
+    var priceData=dataList[i];
+    if(priceMap[priceData.brand]===undefined){
+      priceMap[priceData.price]=priceData.price;
+      price.push(priceData.price);
+    }
+
+  }
+  return price;
+}
+
+
+
+
+function displayData(data,shoeList){
+  if(!shoeList){
+    shoeList=data;
+  }
+var productType=uniqbrandList(data);
+var brand=uniqbrandList(data);
+var color=uniqColorList(data);
+var size=uniqsizeList(data);
+var price=uniqpriceList(data);
+
+shoeDisplay.innerHTML=myTemplateInstance({
+  productType:     productType.sort(),
+  brand:           brand.sort(),
+  color:           color.sort(),
+  size:            size.sort(),
+  price:           price.sort(function(a,b){
+    return a-b;
+  })
+// shoeDisplay.innerHTML=myTemplateInstance
+});
+for(var a=0;a<data.length;a++){
+  var shoeData=data[a];
+  productType.push(shoeData);
+  brand.push(shoeData);
+  color.push(shoeData);
+  size.push(shoeData);
+  price.push(shoeData);
+}
+}
+// shoeDisplay.addEventListener('click',function(evt){
+// if(evt.target.name==='submitButton'){
+//   var filteredProductType=[];
+//   for(var j=0;j<ProductType.length;j++){
+//     var product=ProductType[j];
+//     if(product.name===product.value){
+//       filteredProductType.push(product);
+//     }
+//   }
+// }
+// // var results = myTemplateInstance({data:shoes});
+// // AddText(filteredProductType);
+// });
+
 search.addEventListener('click',filterData);
 var filteredList = [];
 function filterData(){
+  console.log('unfiltred', shoes);
 
 var shoeDisplay = document.querySelectorAll('.shoeDisplay');
 var selectedProduct=document.querySelector('.productDrpDwn');
