@@ -56,7 +56,7 @@
   <div class="dropDown">
 
   <select class="productDrpDwn">
-  <option class="productTemplate" value="">Select Product Type</option>
+  <option class="productTemplate" value="">Select ProductType</option>
       {{#each data}}
     <option class="productTemplate"value="{{ProductType}}">{{ProductType}}</option>
         {{/each}}
@@ -90,10 +90,10 @@
         {{/each}}
     </select>
     <br>
-   <button type="submit" value="submit" onchange="filterData()" class="search">Search</button>
+   <button type="submit" value="submit" name='submitButton' onchange="filterData()" class="search">Search</button>
   </div>
 <div class="addStock">
-  <button type="button" name="" value="Add" onclick="AddText()">ADD</button>
+  <button type="button" class='addButton' name="addButton" value="Add" onclick="AddText()">ADD</button>
     <br>
 <input type="text"id="ProductType"  name="ProductType" placeholder="Enter ProductType"value="{{ProductType}}">
 <br>

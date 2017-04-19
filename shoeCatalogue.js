@@ -3,7 +3,8 @@
   var sizes = document.getElementsByName('Size');
   var ProductType=document.getElementsByName('ProductType');
   var Price=document.getElementsByName('Price');
-
+  var addButton=document.querySelector('.addButton');
+var submitButton=document.querySelector('.search');
 var shoes = [
   {ProductType:'Pump',
   Brand:'Rubi',
@@ -14,14 +15,14 @@ var shoes = [
 
   {
   ProductType:'Buckles',
-  Brand:'Aldo',
+  Brand:'Schutz',
   Color:'Brown',
   Size:"6",
   Price:"R2000",
   in_stock:"7",
 
 },
-  { ProductType:'Lace-UPS',
+  { ProductType:'EllyClay',
     Brand:'Aldo',
     Color:'Pink',
     Size:'7',
@@ -29,7 +30,7 @@ var shoes = [
     in_stock:'8'
   },
   { ProductType:'Lace-UPS',
-    Brand:'Aldo',
+    Brand:'Indigo',
     Color:'Black',
     Size:'6',
     Price:'R1500.00',
@@ -50,41 +51,11 @@ var results = myTemplateInstance({data:shoes});
 document.querySelector('.shoeDisplay').innerHTML += results;
 var search = document.querySelector('.search');
 
-search.addEventListener('click',filterData);
-
-function filterData(){
-
-var allShoes = document.querySelectorAll('.shoeDisplay');
-var selectedProduct=document.querySelector('.productDrpDwn');
-var selectedBrandName=document.querySelector('.brandDrpDwn');
-var selectedColor = document.querySelector('.colorDrpDwn');
-var selectedSize= document.querySelector('.sizeDrpDwn');
-var selectedPrice=document.querySelector('.priceDrDwn');
-
-var filteredList = [];
-
-
-  for (var i = 0; i < shoes.length; i++){
-    var array=shoes[i];
-    if(selectedProduct.value == array.ProductType&&
-      selectedBrandName.value ==array.Brand&&
-      selectedColor.value ==array.Color &&
-      selectedSize.value == array.Size){
-        filteredList.push(array);
-
-      }
-
-    }
-    var results = myTemplateInstance({data:filteredList});
-    document.querySelector('.shoeDisplay').innerHTML = results;
-}
-
-
-
 
 
 
 function AddText(){
+  
 
   shoes.push({
     ProductType:document.querySelector('#ProductType').value,
@@ -97,7 +68,61 @@ function AddText(){
 
   var results = myTemplateInstance({data:shoes});
   document.querySelector('.shoeDisplay').innerHTML = results;
-  }
+}
+
+search.addEventListener('click',filterData);
+var filteredList = [];
+function filterData(){
+
+var shoeDisplay = document.querySelectorAll('.shoeDisplay');
+var selectedProduct=document.querySelector('.productDrpDwn');
+var selectedBrandName=document.querySelector('.brandDrpDwn');
+var selectedColor = document.querySelector('.colorDrpDwn');
+var selectedSize= document.querySelector('.sizeDrpDwn');
+var selectedPrice=document.querySelector('.priceDrDwn');
+
+
+  for (var i = 0; i < shoes.length; i++){
+    var array = shoes[i];
+    if(selectedProduct.value == array.ProductType&&
+      selectedBrandName.value ==array.Brand&&
+      selectedColor.value ==array.Color &&
+      selectedSize.value == array.Size){
+        filteredList.push(array);
+
+      }
+
+
+    }
+    var results = myTemplateInstance({data:filteredList});
+    document.querySelector('.shoeDisplay').innerHTML = results;
+}
+
+
+
+//
+// shoeDisplay.addEventListener('click', function(evt){
+//   if(evt.target.name==='submitButton'){
+//
+//   }
+// })
+//
+//
+// function displayData(info){
+//
+//   var color=uniqColor(info);
+//   var size=uniqSize(info);
+//   var price=uniqPrice(info);
+//   shoeDisplay.innerHTML=myTemplate({
+//     ProductType: ProductType.sort(),
+//     Brand: Brand.sort(),
+//     color: color.sort(),
+//     size: size.sort(function (a,b){
+//       return a-b;
+//
+//
+//   })
+
 
 
 
