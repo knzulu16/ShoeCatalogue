@@ -77,7 +77,7 @@ function AddText(){
     }
   };
   for(var i=0; i < shoes.length; i++) {
-    if(shoes[i].Size == document.querySelector('#Size').value) {
+    if(shoes[i].Size == document.querySelector('#Size').value){
       return;
     }
   };
@@ -213,25 +213,22 @@ function AddText(){
 //   price.push(shoeData);
 // }
 // }
-shoeDisplay.addEventListener('click',function(evt){
-if(evt.target.name==='submitButton'){
-  var filteredProductType=[];
-  for(var j=0;j<ProductType.length;j++){
-    var product=ProductType[j];
-    if(product.value===product.value){
-      filteredProductType.push(product);
-    }
-  }
-}
-var results = myTemplateInstance({data:shoes});
-// AddText(filteredProductType);
-});
+// shoeDisplay.addEventListener('click',function(evt){
+// if(evt.target.name==='submitButton'){
+//   var filteredProductType=[];
+//   for(var j=0;j<ProductType.length;j++){
+//     var product=ProductType[j];
+//     if(product.value===product.value){
+//       filteredProductType.push(product);
+//     }
+//   }
+// }
+// var results = myTemplateInstance({data:shoes});
+// // AddText(filteredProductType);
+// });
 
 search.addEventListener('click',filterData);
-var filteredList = [];
 function filterData(){
-
-
 var shoeDisplay = document.querySelectorAll('.shoeDisplay');
 var selectedProduct=document.querySelector('.productDrpDwn');
 var selectedBrandName=document.querySelector('.brandDrpDwn');
@@ -239,7 +236,7 @@ var selectedColor = document.querySelector('.colorDrpDwn');
 var selectedSize= document.querySelector('.sizeDrpDwn');
 var selectedPrice=document.querySelector('.priceDrDwn');
 
-
+var filteredList = [];
   for (var i = 0; i < shoes.length; i++){
     var array = shoes[i];
     if(selectedProduct.value == array.ProductType&&
@@ -254,8 +251,8 @@ var selectedPrice=document.querySelector('.priceDrDwn');
     }
     var results = myTemplateInstance({data:filteredList});
     document.querySelector('.shoeDisplay').innerHTML = results;
-}
 
+}
 
 
 //
