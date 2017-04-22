@@ -1,3 +1,24 @@
+var count= 0;
+
+function carousel(){
+  var i;
+  var x = document.getElementsByClassName("slideShow");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  count++;
+  if (count > x.length) {myIndex = 1}
+  x[count-1].style.display = "block";
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+carousel();
+
+
+
+
+
+
+var search = document.querySelector('#search');
   var brands = document.getElementsByName('Brand');
   var colors = document.getElementsByName('Color');
   var sizes = document.getElementsByName('Size');
@@ -51,11 +72,36 @@ var myTemplate= document.querySelector('#myTemplate').innerHTML;
 var myTemplateInstance = Handlebars.compile(myTemplate);
 var results = myTemplateInstance({data:shoes});
 document.querySelector('.shoeDisplay').innerHTML += results;
-var search = document.querySelector('.search');
 
 
 
 
+search.addEventListener('click',filterData);
+function filterData(){
+  var shoeDisplay = document.querySelectorAll('.shoeDisplay');
+  var selectedProduct=document.querySelector('.productDrpDwn');
+  var selectedBrandName=document.querySelector('.brandDrpDwn');
+  var selectedColor = document.querySelector('.colorDrpDwn');
+  var selectedSize= document.querySelector('.sizeDrpDwn');
+  var selectedPrice=document.querySelector('.priceDrDwn');
+
+  var filteredList = [];
+  for (var i = 0; i < shoes.length; i++){
+    var array = shoes[i];
+    if(selectedProduct.value == array.ProductType&&
+      selectedBrandName.value ==array.Brand&&
+      selectedColor.value ==array.Color &&
+      selectedSize.value == array.Size){
+        filteredList.push(array);
+
+      }
+
+
+    }
+    var results = myTemplateInstance({data:filteredList});
+    document.querySelector('.shoeDisplay').innerHTML = results;
+
+  }
 function AddText(){
 
   //if product type map contains product type
@@ -227,32 +273,6 @@ function AddText(){
 // // AddText(filteredProductType);
 // });
 
-search.addEventListener('click',filterData);
-function filterData(){
-var shoeDisplay = document.querySelectorAll('.shoeDisplay');
-var selectedProduct=document.querySelector('.productDrpDwn');
-var selectedBrandName=document.querySelector('.brandDrpDwn');
-var selectedColor = document.querySelector('.colorDrpDwn');
-var selectedSize= document.querySelector('.sizeDrpDwn');
-var selectedPrice=document.querySelector('.priceDrDwn');
-
-var filteredList = [];
-  for (var i = 0; i < shoes.length; i++){
-    var array = shoes[i];
-    if(selectedProduct.value == array.ProductType&&
-      selectedBrandName.value ==array.Brand&&
-      selectedColor.value ==array.Color &&
-      selectedSize.value == array.Size){
-        filteredList.push(array);
-
-      }
-
-
-    }
-    var results = myTemplateInstance({data:filteredList});
-    document.querySelector('.shoeDisplay').innerHTML = results;
-
-}
 
 
 //
@@ -382,20 +402,6 @@ var filteredList = [];
 //
 //
 //
-var myIndex = 0;
-
-function carousel(){
-    var i;
-    var x = document.getElementsByClassName("slideShow");
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";
-    }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}
-    x[myIndex-1].style.display = "block";
-    setTimeout(carousel, 2000); // Change image every 2 seconds
-}
-carousel();
 //
 // // function searchShoes(){
 // //   const li=document.createElement('li');

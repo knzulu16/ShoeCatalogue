@@ -53,7 +53,7 @@
     </div>
 
 
-  <div class="dropDown">
+  <div id="dropDown">
 
   <select class="productDrpDwn">
   <option class="productTemplate" value="">Select ProductType</option>
@@ -90,8 +90,10 @@
         {{/each}}
     </select>
     <br>
-   <button type="submit" value="submit" name='submitButton' onclick="filterData()" class="search">Search</button>
+   <button type="submit" value="submit" name='submitButton' onclick="filterData()" id="search">Search</button>
   </div>
+
+
 <div class="addStock">
   <button type="button" class='addButton' name="addButton" value="Add" onclick="AddText()">ADD</button>
     <br>
@@ -103,16 +105,14 @@
 <input type="text"id="Color" name="Color" placeholder="Enter color" value="{{Color}}">
 <br>
 <input type="text" id="Size" name="Size" placeholder="Enter size" value="{{Size}}">
-<br>
+ <br>
 
-<input type="text" id="Price" name="Price" placeholder="Enter price" value="{{Price}}">
-<br>
+  <input type="text" id="Price" name="Price" placeholder="Enter price" value="{{Price}}">
+  <br>
 
-<input type="text" id="Stock" name="in_stock" placeholder="Enter stock" value="{{in_stock}}">
-</div>
-
-
-   </script>
+  <input type="text" id="Stock" name="in_stock" placeholder="Enter stock" value="{{in_stock}}">
+  </div>
+</script>
 
  </div>
      <div class="shoeDisplay"></div>
