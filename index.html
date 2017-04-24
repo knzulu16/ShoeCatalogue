@@ -1,10 +1,10 @@
-<link rel="stylesheet" href="css/normalize.css">
 <!DOCTYPE html>
 
 <html>
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/shoeCatalogue.css">
     <script type="text/javascript" src="handlebars/handlebars-v4.0.5.js"></script>
     <title>Shoe Catalogue</title>
@@ -14,8 +14,7 @@
       </div>
   </head>
 <body>
-
- <div class="container">
+<div class="container">
       <div class="mySlides" style="max-width:500px">
       <img src="IMG-20160927-WA0005_large.jpg"  class="slideShow" style="width:80%">
       <img src="IMG-20160927-WA0011_large.jpg"  class="slideShow" style="width:80%">
@@ -23,11 +22,9 @@
       <img src="http://thumbs.ebaystatic.com/images/m/mnpgrJOv_rt_3twMU9-TnEA/s-l225.jpg" class="slideShow"
       style="width:80%">
       <img src="321717_50.jpg" class="slideShow" style="width:80%">
-      </div>
-      <div id="section">
+</div>
   <script id="myTemplate" type="text/x-handlebars-template">
-
-    <div id="myTable">
+  <div id="myTable">
     <table>
        <thead>
        <th>ProductType</th>
@@ -50,68 +47,69 @@
      {{/each}}
      </tbody>
      </table>
-    </div>
+  </div>
 
 
-  <div id="dropDown">
-
-  <select class="productDrpDwn">
-  <option class="productTemplate" value="">Select ProductType</option>
+<div id="dropDown">
+ <div class="dropDownC">
+     <select class="productDrpDwn">
+     <option class="productTemplate" value="">Select ProductType</option>
       {{#each data}}
-    <option class="productTemplate"value="{{ProductType}}">{{ProductType}}</option>
+      <option class="productTemplate"value="{{ProductType}}">{{ProductType}}</option>
         {{/each}}
-    </select>
-    <br>
-    <select class="brandDrpDwn">
-    <option class="brandTemplate" value="">Select Brand</option>
-   {{#each data}}
-    <option class="brandTemplate" value="{{Brand}}">{{Brand}}</option>
+      </select>
+      <br>
+      <select class="brandDrpDwn">
+      <option class="brandTemplate" value="">Select Brand</option>
+      {{#each data}}
+       <option class="brandTemplate" value="{{Brand}}">{{Brand}}</option>
       {{/each}}
-    </select>
-    <br>
-    <select class="colorDrpDwn">
+      </select>
+      <br>
+      <select class="colorDrpDwn">
       <option color="colorTemplate" value="">Select Color</option>
-    {{#each data}}
-    <option class="colorTemplate" value="{{Color}}">{{Color}}</option>
+      {{#each data}}
+      <option class="colorTemplate" value="{{Color}}">{{Color}}</option>
         {{/each}}
-    </select>
-    <br>
-    <select class="sizeDrpDwn">
+      </select>
+      <br>
+      <select class="sizeDrpDwn">
       <option class="sizeTemplate" value="">Select Size</option>
-    {{#each data}}
-    <option class="sizeTemplate" value="{{Size}}">{{Size}}</option>
+     {{#each data}}
+      <option class="sizeTemplate" value="{{Size}}">{{Size}}</option>
         {{/each}}
-    </select>
-    <br>
-    <select class='priceDrDwn'>
+      </select>
+      <br>
+      <select class='priceDrDwn'>
       <option class="priceTemplate" value="">Select Price</option>
-   {{#each data}}
-    <option class="priceTemplate" value="{{Price}}">{{Price}}</option>
+     {{#each data}}
+     <option class="priceTemplate" value="{{Price}}">{{Price}}</option>
         {{/each}}
-    </select>
-    <br>
-   <button type="submit" value="submit" name='submitButton' onclick="filterData()" id="search">Search</button>
+      </select>
+     <br></br>
+     <button type="submit" value="submit" name='submitButton' onclick="filterData()" id="search">Search</button>
+ </div>
+
+
+  <div class="addStock">
+       <input type="text"id="ProductType"  name="ProductType" placeholder="Enter ProductType"value="{{ProductType}}">
+       <br></br>
+       <input type="text" id="Brand" name="Brand" placeholder="Enter brand" value="{{Brand}}">
+       <br></br>
+
+       <input type="text"id="Color" name="Color" placeholder="Enter color" value="{{Color}}">
+       <br></br>
+       <input type="text" id="Size" name="Size" placeholder="Enter size" value="{{Size}}">
+       <br></br>
+
+       <input type="text" id="Price" name="Price" placeholder="Enter price" value="{{Price}}">
+       <br></br>
+
+      <input type="text" id="Stock" name="in_stock" placeholder="Enter stock" value="{{in_stock}}">
+      <br></br>
+      <button type="button" class='addButton' name="addButton" value="Add" onclick="AddText()">Add Stock</button>
   </div>
-
-
-<div class="addStock">
-  <button type="button" class='addButton' name="addButton" value="Add" onclick="AddText()">ADD</button>
-    <br>
-<input type="text"id="ProductType"  name="ProductType" placeholder="Enter ProductType"value="{{ProductType}}">
-<br>
-<input type="text" id="Brand" name="Brand" placeholder="Enter brand" value="{{Brand}}">
-<br>
-
-<input type="text"id="Color" name="Color" placeholder="Enter color" value="{{Color}}">
-<br>
-<input type="text" id="Size" name="Size" placeholder="Enter size" value="{{Size}}">
- <br>
-
-  <input type="text" id="Price" name="Price" placeholder="Enter price" value="{{Price}}">
-  <br>
-
-  <input type="text" id="Stock" name="in_stock" placeholder="Enter stock" value="{{in_stock}}">
-  </div>
+ </div>
 </script>
 
  </div>

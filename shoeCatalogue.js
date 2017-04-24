@@ -1,13 +1,14 @@
 var count= 0;
-
 function carousel(){
-  var i;
+
   var x = document.getElementsByClassName("slideShow");
-  for (i = 0; i < x.length; i++) {
+  for (var i = 0; i < x.length; i++){
     x[i].style.display = "none";
   }
   count++;
-  if (count > x.length) {myIndex = 1}
+  if (count > x.length){
+    count = 1
+  }
   x[count-1].style.display = "block";
   setTimeout(carousel, 2000); // Change image every 2 seconds
 }
@@ -104,9 +105,14 @@ function filterData(){
   }
 function AddText(){
 
-  //if product type map contains product type
-  //return
-  //else
+       var ProductTypeValue = ProductType.value;
+       var BrandValue = Brand.value;
+       var ColorValue = Color.value;
+       var SizeValue=Size.value;
+       var PriceValue=Price.value;
+
+
+
   for(var i=0; i < shoes.length; i++) {
     if(shoes[i].ProductType == document.querySelector('#ProductType').value) {
       return;
@@ -131,9 +137,14 @@ function AddText(){
     if(shoes[i].Price == document.querySelector('#Price').value) {
       return;
     }
+
   };
 
-
+  if(ProductType.value!== ''
+      && Brand.value!== ''
+      && Color.value!== ''
+    && SizeValue!==''
+  && PriceValue!==''){
 
   shoes.push({
     ProductType:document.querySelector('#ProductType').value,
@@ -146,6 +157,7 @@ function AddText(){
 
   var results = myTemplateInstance({data:shoes});
   document.querySelector('.shoeDisplay').innerHTML = results;
+}
 }
 //
 // function uniqProductTList(dataList){

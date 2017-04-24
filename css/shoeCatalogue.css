@@ -1,13 +1,27 @@
 
+
 /**/
 input{
-  width: 200px;
-  height: 30px;
+  width:150px;
+  height:30px;
 }
 .addStock{
-  float:left;
-  margin-left:50%; 
+  height: 150px;
+  width: 150px;
+  margin-bottom:100em;
+ margin-top:-9em;
+  margin-left:80%;
+  padding: 16px;
+
 }
+.dropDownC{
+
+  height:150px;
+  width:150px;
+  margin-right: 80%;
+
+}
+
 html{
 
   background-color:#324644;
@@ -18,6 +32,8 @@ html{
 table {
     margin: 10px;
     color: #fff;
+    margin-left:10%;
+
 
 }
 th, td {
@@ -30,11 +46,7 @@ th, td {
 
 
 
-/*#allShoes{
-  margin:0 auto;
-width:1000px;
-background-color:white;
-}*/
+
 
 img{
   margin-left:20em;
@@ -50,19 +62,19 @@ img{
   /*background-color: white;*/
 
 text-align: center;
-  /*font-family: Helvetica,Arial,sans-serif;*/
-  /*font-weight: bold;*/*/
-  /*font-size: 36;*/
-  /*background-color: pink;*/
+font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+text-shadow: 0px 2px 3px;
+font-size: 2em;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 
       margin: 0 0 10px 0;
       padding: 5px;
-      font-size: 24px;
-      background-color: #999;
+      font-size: 30px;
+      /*background-color: #999;*/
       color: #fff;
   }
 
-}
+
 li{
 
   col-lg-15 {
@@ -99,10 +111,9 @@ li{
 }
 #dropDown{
   margin-top:1em;
-  width: 800px;
-  height: 150px;
+  width: 1000px;
   margin-bottom: 5em;
-
+  align:center;
 
 
 }
@@ -134,9 +145,11 @@ select{
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
+    min-width: 1000px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index:1;
+    height: 500px;
+    margin-left:10%;
 
 }
 
