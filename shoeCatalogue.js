@@ -96,7 +96,18 @@ function filterData(){
         filteredList.push(array);
 
       }
-
+      else if(selectedProduct.value == array.ProductType){
+         filteredList.push(array);
+}
+      else if(selectedBrandName.value ==array.Brand){
+         filteredList.push(array);
+}
+      else if(selectedColor.value ==array.Color){
+        filteredList.push(array);
+}
+    else if(selectedSize.value == array.Size){
+        filteredList.push(array);
+}
 
     }
     var results = myTemplateInstance({data:filteredList});
