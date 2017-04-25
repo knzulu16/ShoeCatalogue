@@ -20,12 +20,12 @@ carousel();
 
 
 var search = document.querySelector('#search');
-  var brands = document.getElementsByName('Brand');
-  var colors = document.getElementsByName('Color');
-  var sizes = document.getElementsByName('Size');
-  var ProductType=document.getElementsByName('ProductType');
-  var Price=document.getElementsByName('Price');
-  var addButton=document.querySelector('.addButton');
+var brands = document.getElementsByName('Brand');
+var colors = document.getElementsByName('Color');
+var sizes = document.getElementsByName('Size');
+var ProductType=document.getElementsByName('ProductType');
+var Price=document.getElementsByName('Price');
+var addButton=document.querySelector('.addButton');
 var submitButton=document.querySelector('.search');
 var shoeDisplay=document.querySelector('.shoeDisplay');
 var shoeList='';
@@ -96,8 +96,13 @@ function filterData(){
         filteredList.push(array);
 
       }
-
-
+      else if(selectedColor.value ==array.Color &&
+        selectedSize.value == array.Size){
+              filteredList.push(array);
+}
+      else if(selectedSize.value == array.Size){
+      filteredList.push(array);
+}
     }
     var results = myTemplateInstance({data:filteredList});
     document.querySelector('.shoeDisplay').innerHTML = results;
@@ -113,7 +118,7 @@ function AddText(){
 
 
 
-  for(var i=0; i < shoes.length; i++) {
+  for(var i=0; i < shoes.length; i++){
     if(shoes[i].ProductType == document.querySelector('#ProductType').value) {
       return;
     }
