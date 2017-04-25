@@ -1,12 +1,52 @@
 
+
+/**/
 input{
-  width: 200px;
-  height: 30px;
+  width:150px;
+  height:30px;
 }
+.addStock{
+  height: 150px;
+  width: 150px;
+  margin-bottom:100em;
+ margin-top:-9em;
+  margin-left:80%;
+  padding: 16px;
+
+}
+.dropDownC{
+
+  height:150px;
+  width:150px;
+  margin-right: 80%;
+
+}
+
 html{
-  background-color:#AAA;
-  border-color:blue;
+
+  background-color:#324644;
+
+  /*border-color:blue;*/
+
 }
+table {
+    margin: 10px;
+    color: #fff;
+    margin-left:10%;
+
+
+}
+th, td {
+    padding: 5px;
+    border: 1px solid #999;
+}
+.search{
+  color: white;
+}
+
+
+
+
 
 img{
   margin-left:20em;
@@ -18,17 +58,23 @@ img{
   width:300px;
 }
 #myHeading{
-  background-color:#DDDDDD;
+  /*background-color:#DDDDDD;
   /*background-color: white;*/
 
 text-align: center;
-  font-family: Helvetica,Arial,sans-serif;
-  font-weight: bold;
-  /*font-size: 36;*/
-  /*background-color: pink;*/
+font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+text-shadow: 0px 2px 3px;
+font-size: 2em;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+      margin: 0 0 10px 0;
+      padding: 5px;
+      font-size: 30px;
+      /*background-color: #999;*/
+      color: #fff;
+  }
 
 
-}
 li{
 
   col-lg-15 {
@@ -63,61 +109,69 @@ li{
 
 
 }
-#drop{
+#dropDown{
   margin-top:1em;
-  width: 800px;
-  height: 150px;
+  width: 1000px;
   margin-bottom: 5em;
+  align:center;
+
 
 }
+/*#brandDrpDwn,#colorDrpDwn,#sizeDrpDwn,#priceDrpDwn{
+  margin-right:20em;
+}*/
 select{
   margin-top:2em;
 }
 
-#drop {
+#dropDown {
     background-color: #4CAF50;
     color: white;
     padding: 16px;
     font-size: 16px;
     border: none;
     cursor: pointer;
+
 }
 
 /* The container <div> - needed to position the dropdown content */
-#drop{
+#dropDown{
     position: relative;
     display: inline-block;
 }
 
 /* Dropdown Content (Hidden by Default) */
-#drop{
+#dropDown{
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
+    min-width: 1000px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    margin-left: 10em;
+    z-index:1;
+    height: 500px;
+    margin-left:10%;
+
 }
 
 /* Links inside the dropdown */
-#drop {
+#dropDown {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+
 }
 
 /* Change color of dropdown links on hover */
-#drop:hover {background-color: #f1f1f1}
+#dropDown:hover {background-color: #f1f1f1}
 
 /* Show the dropdown menu on hover */
-#drop:hover .drop{
+#dropDown:hover .drop{
     display: block;
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-#drop:hover{
+#dropDown:hover{
     background-color: #3e8e41;
 }
 
